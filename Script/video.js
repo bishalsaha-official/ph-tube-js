@@ -33,14 +33,19 @@ const displayVideos = (videos) => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
-            <figure>
-                <img src="${video.thumbnail}" alt="Shoes" />
+            <figure class="h-60">
+                <img class="w-full h-full object-cover" src=${video.thumbnail} />
             </figure>
-            <div class="card-body">
-                <h2 class="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+            <div class="flex gap-2 px-0 py-3">
+                <div>
+                    <img class="w-10 h-10 rounded-full object-cover" src=${video.authors[0].profile_picture} />
+                </div>
+                <div>
+                    <h2 class="font-bold text-xl">${video.title}</h2>
+                    <div class="flex items-center gap-2">
+                        <p class="text-gray-400">${video.authors[0].profile_name}</p>
+                        <img class="w-5" src='https://img.icons8.com/?size=96&id=D9RtvkuOe31p&format=png' />
+                    </div>
                 </div>
             </div>
         `
