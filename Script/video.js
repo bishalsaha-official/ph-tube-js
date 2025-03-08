@@ -7,8 +7,14 @@ const loadCategories = () => {
 
 
 // Display Categories
-const displayCategories = (data) =>{
-    console.log(data)
+const displayCategories = (categories) =>{
+    const categoryContainer = document.getElementById('category-Container')
+    categories.forEach((item) => {
+        const button = document.createElement('button');
+        button.classList.add('btn');
+        button.innerText = item.category;
+        categoryContainer.appendChild(button);
+    })
 }
 
 loadCategories()
